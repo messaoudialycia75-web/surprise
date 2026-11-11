@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: background 0.8s ease-in-out;
+}
+
+/* Fonds d'écran dynamiques */
+body.bg-blue {
+    background: url('blue.png') no-repeat center center/cover;
+}
+
+body.bg-pink {
+    background: url('pink.png') no-repeat center center/cover;
+}
+
+body.bg-white-flower {
+    background: url('white.png') no-repeat center center/cover;
+}
+
+body.bg-yellow {
+    background: url('yellow.png') no-repeat center center/cover;
+}
+
+/* Conteneur principal */
+.glass-card {
+    width: 90vw;
+    max-width: 1350px;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: center;
+    gap: 50px;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+/* MODIFICATION POUR LA DERNIÈRE PAGE (Tournesol) */
+body.bg-yellow .glass-card {
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+body.bg-yellow .video-section {
+    grid-column: 2;
+    transform: scale(1.05);
+    transition: transform 0.5s ease;
+}
+
+body.bg-yellow .text-section, 
+body.bg-yellow .right-text-section {
+    background: rgba(0, 0, 0, 0.45);
+    padding: 25px;
+    border-radius: 15px;
+    backdrop-filter: blur(6px);
+    max-height: 75vh;
+    overflow-y: auto;
+}
+
+/* Section Texte standard */
+.text-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.text-section.animating, .right-text-section.animating {
+    opacity: 0;
+    transform: translateY(-15px);
+}
+
+.right-text-section {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Catégorie / Sur-titre */
+.category {
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Titre de la fleur (Bien lisible, ni trop petit ni gigantesque) */
+.flower-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4.5rem; 
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 22px;
+    letter-spacing: 1px;
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.6);
+}
+
+body.bg-yellow .flower-title {
+    font-size: 2.6rem;
+    margin-bottom: 12px;
+}
+
+/* Texte du poème */
+.poem-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.45rem; /* Confortable et élégant à lire */
+    line-height: 1.65;
+    color: #fcfcfc;
+    margin-bottom: 18px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+body.bg-yellow .poem-text {
+    font-size: 1.15rem;
+}
+
+/* Section Vidéo / Image Fleur */
+.video-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.main-video {
+    width: 100%;
+    max-width: 470px; /* Taille intermédiaire idéale */
+    height: auto;
+    max-height: 68vh;
+    object-fit: cover;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.main-video:hover {
+    transform: scale(1.02);
+}
+
+.main-video.slide-out {
+    transform: scale(0.95);
+    opacity: 0;
+}

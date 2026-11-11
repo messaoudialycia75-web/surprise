@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyeux Anniversaire </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="page2.css">
+</head>
+<body id="pageBody" class="bg-blue">
+
+    <div class="glass-card">
+        
+        <!-- Colonne de gauche : Texte / Première partie du message -->
+        <div class="text-section" id="textSection">
+            <span class="category" id="categoryTitle">Pour toi mon amour</span>
+            <h1 class="flower-title" id="flowerTitle">Mon Dahlia</h1>
+            <p class="poem-text" id="flowerPoem">
+                <i>
+                Comme un dahlia qui s'ouvre à la lumière,<br>
+                Ton amour illumine mon univers.<br>
+                Une douce tendresse,<br>
+                Qui berce mon cœur et chasse mes tristesses.<br><br>
+                À tes côtés, chaque instant est un cadeau,<br>
+                Le plus précieux, le plus beau.
+                </i>
+            </p>
+        </div>
+
+        <!-- Colonne du milieu : La vidéo interactive -->
+        <div class="video-section">
+            <video class="main-video" id="flowerVideo" autoplay loop muted playsinline>
+                <source src="dahlia.webm" type="video/webm">
+                Ton navigateur ne prend pas en charge la lecture de vidéos.
+            </video>
+        </div>
+
+        <!-- Colonne de droite : Réservée pour équilibrer ou pour la suite du texte si besoin -->
+        <div class="right-text-section" id="rightTextSection"></div>
+
+    </div>
+
+    <script src="page2.js"></script>
+</body>
+</html>
